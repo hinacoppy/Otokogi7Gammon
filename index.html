@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<meta name="description" content="Otokogi Gammon App">
+<meta name="author" content="(C)hinacoppy 2021">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/OtokogiGame.css">
+<link rel="stylesheet" href="css/OtokogiBoard.css">
+<link rel="stylesheet" href="/css/font-awesome-animation.min.css">
+<link rel="icon" href="icon/favicon.ico">
+<link rel="apple-touch-icon" href="icon/apple-touch-icon.png">
+<title>Otokogi7Gammon</title>
+</head>
+<body>
+<article id="container" class="container8">
+<section id="board" class="board"></section>
+<section id="thumbboard0" class="thumbboard"></section>
+<section id="thumbboard1" class="thumbboard"></section>
+<section id="thumbboard2" class="thumbboard"></section>
+<section id="thumbboard3" class="thumbboard"></section>
+<section id="thumbboard4" class="thumbboard"></section>
+<section id="thumbboard5" class="thumbboard"></section>
+<section id="thumbboard6" class="thumbboard"></section>
+<section id="thumbboard7" class="thumbboard"></section>
+</article>
+
+<button id="rollbtn" class="oparationbtn"><i class="fas fa-dice"></i> 振賽</button>
+<section id="doneundo">
+<button id="donebtn" class="oparationbtn"><i class="fas fa-check-circle"></i> 完了</button>
+&emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+<button id="undobtn" class="oparationbtn"><i class="fas fa-undo"></i> 戻す</button>
+</section>
+<button id="settingbtn" class="oparationbtn"><i class="fas fa-bars"></i> 設定</button>
+
+<aside id="youwin">漢気!!</aside>
+
+<aside id="settings" class="settings">
+<h2>### &emsp; 漢気ギャモン 7 &emsp; ###</h2>
+<p>
+参加人数: &nbsp;
+<select id="players" name="players">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4" selected>4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+</select>
+</p>
+<p>
+<button id="applybtn" class="oparationbtn"><i class="fas fa-check"></i> 適用</button>&emsp; &emsp;
+<button id="cancelbtn" class="oparationbtn"><i class="fas fa-times"></i> 取消</button>
+</p>
+</aside>
+
+
+<script src="/js/fontawesome-all.min.js" defer></script>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/inobounce.min.js"></script>
+<script src="js/Ogid_class.js"></script>
+<script src="js/OtokogiChequer_class.js"></script>
+<script src="js/OtokogiBoard_class.js"></script>
+<script src="js/OtokogiGame_class.js"></script>
+<script>
+var otokogi = new OtokogiGammon(0); //default players
+
+if (otokogi.isIOS()) {
+  iNoBounce.enable();
+}
+</script>
+<script src="/js/start-serviceWorker.js"></script>
+</body>
+</html>
